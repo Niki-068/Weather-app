@@ -5,6 +5,7 @@ const request = require('request');
 const forecast = require('./utility/Forecast')
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // get public and view directory paths
 const publicDirPath = path.join(__dirname,"../public");
@@ -78,6 +79,6 @@ app.get('*',(req,res)=>{
         name: "nikita"
     })
 })
-app.listen(3000,()=>{
-    console.log("Server is up on port 3000");
+app.listen(port,()=>{
+    console.log("Server is up on port " + port);
 })
