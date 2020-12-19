@@ -15,7 +15,7 @@ const fetchForcast = (address,callback)=>{
             console.log(data.forecast);
 
             message1.textContent = data.location;
-            message2.textContent = data.forecast;
+            message2.textContent = "weather feels like " + data.forecast + ". Temperature is " + data.temperature;
         }
     })
 })
@@ -33,5 +33,5 @@ weatherForm.addEventListener('submit',(e)=>{
     const location = search.value;
 
     fetchForcast(location);
-    console.log(location);
+    //console.log(location);
 })
